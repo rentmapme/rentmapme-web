@@ -1,0 +1,111 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div id="login-box">
+        <div id="login-box-holder">
+          <div class="row">
+            <div class="col-xs-12">
+              <header id="login-header">
+                <div id="login-logo">
+                  <img src="assets/images/logoMain.png" alt=""/>
+                </div>
+              </header>
+              <div id="login-box-inner">
+                <form class="form" name="loginForm" ng-submit="login()" novalidate>
+                  <div class="form-group" ng-class="{'has-error' : loginForm.email.$invalid && loginForm.email.$dirty, 'has-success' : loginForm.email.$valid && loginForm.email.$dirty }">
+                    <label>Email</label>
+
+                    <input type="email" name="email" class="form-control" ng-model="user.email" required rm-focus>
+                    <p ng-show="loginForm.email.$invalid && loginForm.email.$dirty && !loginForm.email.$focused" class="help-block">Wrong email address</p>
+
+                  </div>
+
+                  <div class="form-group">
+                    <label>Password</label>
+
+                    <input type="password" name="password" class="form-control" ng-model="user.password" required rm-focus>
+                    <p ng-show="loginForm.password.$invalid && loginForm.password.$dirty && !loginForm.password.$focused" class="help-block">Password is required</p>
+
+                  </div>
+
+                  <p class="help-block">{{ errors.other }}</p>
+                  <div id="remember-me-wrapper">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <div class="checkbox-nice">
+                          <input type="checkbox" id="remember-me" checked="checked" />
+                          <label for="remember-me">
+                            Remember me
+                          </label>
+                        </div>
+                      </div>
+                      <a href="forgot-password" id="login-forget-link" class="col-xs-6">
+                        Forgot password?
+                      </a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <button type="submit" class="btn btn-success col-xs-12" type="submit">Login</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <p class="social-text">Or login with</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <a class="btn btn-facebook col-xs-12" href="" ng-click="loginOauth('facebook')">
+                        <i class="fa fa-facebook"></i> Login with Facebook
+                      </a>
+                      <!--<a class="btn btn-google-plus" href="" ng-click="loginOauth('google')">-->
+                        <!--<i class="fa fa-google-plus"></i> Connect with Google+-->
+                      <!--</a>-->
+                      <!--<a class="btn btn-twitter" href="" ng-click="loginOauth('twitter')">-->
+                        <!--<i class="fa fa-twitter"></i> Connect with Twitter-->
+                      <!--</a>-->
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <a class="btn btn-twitter col-xs-12" href="" ng-click="loginOauth('twitter')">
+                      <i class="fa fa-twitter"></i> Login with Twitter
+                      </a>
+                      <!--<a class="btn btn-google-plus" href="" ng-click="loginOauth('google')">-->
+                      <!--<i class="fa fa-google-plus"></i> Connect with Google+-->
+                      <!--</a>-->
+                      <!--<a class="btn btn-twitter" href="" ng-click="loginOauth('twitter')">-->
+                      <!--<i class="fa fa-twitter"></i> Connect with Twitter-->
+                      <!--</a>-->
+                    </div>
+                    <!--<div class="col-xs-12 col-sm-6">-->
+                      <!--<button type="submit" class="btn btn-primary col-xs-12 btn-twitter" ng-click="loginOauth('twitter')">-->
+                        <!--<i class="fa fa-twitter"></i> Twitter-->
+                      <!--</button>-->
+                    <!--</div>-->
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="login-box-footer">
+          <div class="row">
+            <div class="col-xs-12">
+              Do not have an account?
+              <a href="/signup">
+                Register now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div ng-include="'components/footer/footer.html'"></div>

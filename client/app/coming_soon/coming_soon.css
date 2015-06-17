@@ -1,0 +1,6 @@
+#city {
+  min-height: 300px;
+  background: url("../../assets/images/nyc_wallpaper.jpg");
+  /*background-size: 100% auto;*/
+  background-size: cover;
+}

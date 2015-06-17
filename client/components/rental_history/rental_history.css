@@ -1,0 +1,26 @@
+.vertical_center {
+  vertical-align: middle;
+}
+.text-center  {
+  padding: 11px 16px; /* Extra pixel top and bottom for border on buttons */
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+
+#addRent {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 50px;
+}
+
+
+#rentListHeader{
+  border-bottom: 1px dotted #b0bec5;
+  margin-bottom: 20px;
+}
+

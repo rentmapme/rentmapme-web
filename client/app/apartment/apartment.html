@@ -1,0 +1,104 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-offset-1 col-lg-10 col-lg-offset-1 col-md-12 col-sm-12" id="leftColumn">
+      <div class="row" id="apartmentTitle">
+            <h1>{{apartment.streetAddress}}</h1>
+      </div>
+      <!--<div class="row" id="buttonsRow">-->
+        <!--<div class="btn-group pull-left" data-toggle="buttons-radio" id="mapControlButton">-->
+          <!--<button class="btn btn-default active" id="mapviewLink" href="">Map</button>-->
+          <!--<button class="btn btn-default" id="streetviewLink" href="">Street View</button>-->
+        <!--</div>-->
+
+        <!--<div id="userActionButtons" class="pull-right">-->
+          <!--<button class="btn btn-info" id="saveBtn" href="">Save</button>-->
+          <!--<button class="btn btn-inverse" id="shareBtn" href="">Share</button>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <div class="row" id="map_canvas">
+        <ui-gmap-google-map center="apartment.loc" zoom="zoom" options="options">
+
+          <ui-gmap-marker coords="apartment.loc"  idkey="apartment._id">
+          </ui-gmap-marker>
+
+        </ui-gmap-google-map>
+
+      </div>
+      <!--<div class="row" id="summary">-->
+        <!--<h3 class="text-center">Summary</h3>-->
+        <!--&lt;!&ndash;<div class="col-lg-3">&ndash;&gt;-->
+          <!--&lt;!&ndash;&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+      <!--</div>-->
+
+      <div class="row" id="reviews">
+        <h3 class="text-center">Reviews  ({{apartment.rents.length}} review(s), ${{minRent}} - ${{maxRent}}, {{minBedrooms}} to {{maxBedrooms}} Beds)</h3>
+        <table class="table table-hover ">
+          <tr>
+            <th>No of Bedrooms</th>
+            <th>No of Bathrooms</th>
+            <th>Lease Start Date</th>
+            <th>Lease End Date</th>
+            <th>Rent Amount</th>
+            <th colspan="2">Review</th>
+          </tr>
+          <tr ng-repeat='rent in apartment.rents'>
+            <td class="text-center">{{rent.numBedrooms}}</td>
+            <td>{{rent.numBathrooms}}</td>
+            <td>{{getDate(rent.leaseStartDate)}}</td>
+            <td>{{getDate(rent.leaseEndDate)}}</td>
+            <td>{{rent.rentAmount}}</td>
+            <td colspan="2" class="review">{{rent.review}} </td>
+          </tr>
+        </table>
+      </div>
+      <div class="row" id="apartmentAmenities">
+        <h3 class="text-center">Apartment Amenities</h3>
+        <ul class="resultsList list-group row">
+          <li class="resultItem col-xs-offset-1 col-xs-3" ng-repeat=" (key,value) in apartmentAmenities">
+            <i class="fa-check fa" ng-class="isActive(value)"></i>
+            <span>{{key}}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="row" id="buildingAmenities">
+        <h3 class="text-center">Building Amenities</h3>
+        <ul class="resultsList list-group row">
+          <li class="resultItem col-xs-offset-1 col-xs-3" ng-repeat=" (key,value) in buildingAmenities">
+            <i class="fa-check fa" ng-class="isActive(value)"></i>
+            <span>{{key}}</span>
+          </li>
+        </ul>
+      </div>
+
+
+
+
+
+
+
+
+      <div class="row" id="contact">
+        <h3 class="text-center">Contact Information</h3>
+        <!--<div class="col-lg-offset-1 col-lg-3">-->
+          <p>        Contact Name : {{apartment.contactInformation.primaryContactName}}</p>
+        <!--</div>-->
+        <br>
+        <!--<div class="col-lg-offset-1 col-lg-3">-->
+          <p>        Email : {{apartment.contactInformation.email}}</p>
+        <!--</div>-->
+        <br>
+        <p> Phone:  {{apartment.contactInformation.phoneNumber}}</p>
+      </div>
+
+    </div>
+    <!--<div class="col-lg-4 col-md-4 col-sm-4" id="rightColumn">-->
+      <!--&lt;!&ndash;<div class="row" id="listingStats"></div>&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="row" id="nearByListing"></div>&ndash;&gt;-->
+    <!--</div>-->
+  </div>
+</div>
+
+<div ng-include="'components/footer/footer.html'"></div>

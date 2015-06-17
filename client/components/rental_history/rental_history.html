@@ -1,0 +1,38 @@
+<div class="container" ng-controller="RentalHistoryCtrl" >
+  <div class="row" id="rentListHeader">
+    <div class="col-sm-6 ">
+      <h3 class="text-center pull-left"> Rental History </h3>
+
+    </div>
+    <div class="col-sm-6">
+      <button class="btn btn-primary pull-right" id="addRent" ng-click='toggleRentForm()'>
+        <i class="fa" ng-class="{false: 'fa-plus-circle', true: 'fa-minus-circle'}[showAddRent]" id="addBtnIcon"></i>
+        Add Rent </button>
+    </div>
+  </div>
+  <div id="rentList" ng-show="!showAddRent">
+    <div class="row" data-ng-repeat="rent in rents">
+      <div class="col-lg-1">
+
+        <img
+          src = "http://maps.googleapis.com/maps/api/streetview?size=60x60&location={{rent.apartment.loc[1]}},{{rent.apartment.loc[0]}}&fov=90&heading=235&pitch=10&sensor=false"/>
+      </div>
+      <div class="col-lg-9">
+        <a href="/apartment?id={{rent.apartment._id}}">{{rent.apartment.streetAddress}}</a>
+        <p>{{getDate(rent.leaseStartDate)}} - {{getDate(rent.leaseEndDate)}}, ${{rent.rentAmount}}, {{rent.numBedrooms}} Bed, {{rent.numBathrooms}} Bath</p>
+        <p><b>Review:</b> <i>{{rent.review}}</i></p>
+      </div>
+      <div class="col-lg-2">
+        <p>{{rent.rating}}</p>
+        <button class="btn btn-default" ng-click='editRent()'><i class="fa fa-edit"></i> Edit</button>
+        <button class="btn btn-default" ng-click="deleteRent(rent._id)"><i class="fa fa-trash"></i> Delete</button>
+      </div>
+    </div>
+
+  </div>
+  <div id="addRentForm" ng-show="showAddRent">
+    <div ng-include="'components/rent_form/add_rent.html'"></div>
+  </div>
+
+
+</div>

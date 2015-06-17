@@ -1,0 +1,92 @@
+#leftColumn {
+  background-color: #ffffff;
+  margin-top: 17px;;
+  height: 100%;
+}
+
+#rightColumn {
+  background-color: #008000;
+  margin-top: 17px;;
+  height: 100%;
+}
+
+
+#apartmentTitle{
+  margin-top: 20px;
+
+}
+
+#mapControlButton {
+  margin-left: 15px;
+}
+
+#userActionButtons{
+ margin-right: 15px;
+}
+
+#map_canvas  .angular-google-map, #map_canvas .angular-google-map-container{
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  height: 500px;
+}
+/*.angular-google-map,  .angular-google-map-container  {*/
+  /*margin-top: 20px;*/
+  /*margin-right: 10px;*/
+  /*margin-left: 10px;*/
+  /*height: 500px;*/
+/*}*/
+
+/*.angular-google-map,  .angular-google-map-container {*/
+  /*margin-top: 17px;*/
+  /*top: 0;*/
+  /*bottom: 0;*/
+  /*right: 0;*/
+  /*left: 0;*/
+
+/*}*/
+
+
+
+.active {
+  color: #008000;
+}
+
+.default {
+  color : lightgray;
+}
+
+
+h3 {
+  color: #E84E40
+}
+
+tr th {
+  text-align: center;
+}
+
+tr td {
+  text-align: center;
+}
+
+.review {
+  text-align: left !important;
+}
+/*span.checkIcon {*/
+  /*background: url("../assets/images/checkIcon.png") no-repeat 0 0;*/
+  /*height: 16px;*/
+  /*width: 16px;*/
+  /*display: block;*/
+  /*float: left; }*/
+ /*li.resultItem .active {*/
+  /*background-position: 0 0 !important; }*/
+/*li.resultItem .disable {*/
+  /*background-position: 0 -18px !important; }*/
+/*.features ul.featuresAmenities li p {*/
+  /*margin-left: 10px;*/
+  /*float: left;*/
+  /*font-size: 14px;*/
+  /*font-weight: 200;*/
+  /*color: #737373;*/
+  /*text-align: left;*/
+  /*line-height: 18px; }*/

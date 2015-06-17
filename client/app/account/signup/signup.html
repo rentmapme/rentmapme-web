@@ -1,0 +1,93 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div id="login-box">
+        <div class="row">
+          <div class="col-xs-12">
+            <header id="login-header">
+              <div id="login-logo">
+                <img src="assets/images/logoMain.png" alt=""/>
+              </div>
+            </header>
+            <div id="login-box-inner">
+              <form role="form" name="form" ng-submit="register(form)" novalidate>
+                <div class="input-group" ng-class="{ 'has-success': form.name.$valid && submitted,
+                                            'has-error': form.name.$invalid && submitted }">
+                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                  <input type="text" name="name" class="form-control" ng-model="user.name" placeholder="Full Name"
+                         required/>
+                  <p class="help-block" ng-show="form.name.$error.required && submitted">
+                    A name is required
+                  </p>
+                </div>
+                <div class="input-group" ng-class="{ 'has-success': form.name.$valid && submitted,
+                                            'has-error': form.name.$invalid && submitted }">
+                  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                  <input type="email" name="email" class="form-control" ng-model="user.email" placeholder="Email"
+                         required
+                         mongoose-error/>
+                  <p class="help-block" ng-show="form.email.$error.email && submitted">
+                    Doesn't look like a valid email.
+                  </p>
+                  <p class="help-block" ng-show="form.email.$error.required && submitted">
+                    What's your email address?
+                  </p>
+                  <p class="help-block" ng-show="form.email.$error.mongoose">
+                    {{ errors.email }}
+                  </p>
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                  <input type="password" name="password" class="form-control" ng-model="user.password" placeholder="Enter Password"
+                         ng-minlength="3"
+                         required
+                         mongoose-error/>
+                  <p class="help-block"
+                     ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">
+                    Password must be at least 3 characters.
+                  </p>
+                  <p class="help-block" ng-show="form.password.$error.mongoose">
+                    {{ errors.password }}
+                  </p>
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-unlock-alt"></i></span>
+                  <input type="password" name="password_reenter" class="form-control" ng-model="user.password" placeholder="Re enter Password"
+                         ng-minlength="3"
+                         required
+                         mongoose-error/>
+                  <p class="help-block"
+                     ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">
+                    Password must be at least 3 characters.
+                  </p>
+                  <p class="help-block" ng-show="form.password.$error.mongoose">
+                    {{ errors.password }}
+                  </p>
+                </div>
+                <div id="remember-me-wrapper">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="checkbox-nice">
+                        <input type="checkbox" id="terms-cond" checked="checked" />
+                        <label for="terms-cond">
+                          I accept terms and conditions
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <button type="submit" class="btn btn-success col-xs-12">Register</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div ng-include="'components/footer/footer.html'"></div>

@@ -1,0 +1,107 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="col-md-offset-2 col-md-8">
+
+
+
+  <div class="container" >
+    <!--<div class="row" ng-show="showAlert" >-->
+      <alert close="closeAlert()"  type="{{alert.type}}" ng-show="showAlert">{{alert.msg}} <a href="{{alert.link}}">here</a> </alert>
+    <!--</div>-->
+    <div class="main-form " ng-show="isTokenValid" style="margin-top: 10px" >
+
+
+      <div class="row">
+
+        <div class="col-xs-12">
+          <div id="login-box">
+
+            <div id="login-box-holder">
+
+
+              <div class="row">
+                <div class="col-xs-12">
+                  <header id="login-header">
+                    <div id="login-logo">
+                      <img src="assets/images/logoMain.png" alt=""/>
+                    </div>
+                  </header>
+                  <div id="login-box-inner" class="with-heading">
+                    <h4>Change your password</h4>
+
+                    <form role="form" name="form" ng-submit="changePassword(form)" novalidate>
+                      <div class="form-group">
+                        <label>New Password</label>
+
+                        <input type="password" name="newPassword" class="form-control" ng-model="newPassword" mongoose-error/>
+
+
+                      </div>
+                      <!--<p ng-show="form.email.$invalid && form.email.$dirty && !form.email.$focused" class="help-block">Wrong email address</p>-->
+                      <div class="form-group">
+                        <label>Confirm Password</label>
+
+                        <input type="password" name="confirmPassword" class="form-control" ng-model="confirmPassword" mongoose-error/>
+
+
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <button type="submit" class="btn btn-success col-xs-12">Reset password</button>
+                        </div>
+                        <div class="col-xs-12">
+                          <br/>
+                          <a href="/login" id="login-forget-link" class="forgot-link col-xs-12">Back to login</a>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!--<div class="row " >-->
+        <!--<div class="col-md-offset-4 col-sm-8">-->
+          <!--<h1>Change Password</h1>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <!--<div class="row">-->
+        <!--<div class="col-md-offset-2 col-sm-8">-->
+          <!--<form class="form" name="form" ng-submit="changePassword(form)" novalidate>-->
+
+            <!--<div class="form-group">-->
+              <!--<label>New Password</label>-->
+
+              <!--<input type="password" name="newPassword" class="form-control" ng-model="newPassword"-->
+                     <!--mongoose-error/>-->
+              <!--<p class="help-block" ng-show="form.password.$error.mongoose">-->
+                <!--{{ errors.other }}-->
+              <!--</p>-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+              <!--<label>Confirm New Password</label>-->
+
+              <!--<input type="password" name="confirmPassword" class="form-control"-->
+                     <!--ng-minlength="3"-->
+                     <!--required/>-->
+              <!--<p class="help-block"-->
+                 <!--ng-show="(form.newPassword.$error.minlength || form.newPassword.$error.required) && (form.newPassword.$dirty || submitted)">-->
+                <!--Password must be at least 3 characters.-->
+              <!--</p>-->
+            <!--</div>-->
+
+            <!--&lt;!&ndash;<p class="help-block"> {{ message }} </p>&ndash;&gt;-->
+
+            <!--<button class="btn btn-lg btn-primary" type="submit">Save</button>-->
+          <!--</form>-->
+        <!--</div>-->
+      <!--</div>-->
+    </div>
+
+  </div>
+<div ng-include="'components/footer/footer.html'"></div>

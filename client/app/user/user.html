@@ -1,0 +1,23 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-offset-1 col-lg-10 col-lg-offset-1" style="margin-top:50px;">
+      <tabset>
+        <tab heading="Rental History">
+          <rental-history></rental-history>
+          <!--<div ng-include="'components/rental_history/rental_history.html'"></div>-->
+        </tab>
+        <!--<tab heading="Saved Apartments"><p class="text-center">Saved Apartments</p></tab>-->
+        <tab heading="Settings">
+          <div ng-include="'components/settings/settings.html'"></div>
+        </tab>
+
+      </tabset>
+    </div>
+  </div>
+</div>
+<div ng-include="'components/footer/footer.html'"></div>
+
+
+

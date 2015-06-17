@@ -1,0 +1,9 @@
+.terms li {
+  list-style-type: square !important;
+  list-style-position: outside;
+  list-style-image: none;
+}
+.subHeading {
+  color: slategrey;
+  font-size: 18px;
+}

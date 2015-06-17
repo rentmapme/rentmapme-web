@@ -1,0 +1,21 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div class="row" >
+    <div class="col-lg-offset-2 col-lg-8 col-lg-offset-2" style="margin-top: 10px">
+      <a href="/coming_soon?city=sanfrancisco">
+        <img src="assets/images/{{cityImage}}" class="img-responsive">
+        <div class="caption">
+          <h4> {{city}}  (Coming Soon)</h4>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <h4 class="text-center"> Help us collect rents in {{city}} <a href="{{cityUrl}}"> here.</a> </h4>
+    <h4 class="text-center"> Spread the word to friends in {{city}} <a> Tweet </a>| <a>Facebook</a> </h4>
+
+  </div>
+</div>
+<div ng-include="'components/footer/footer.html'"></div>
+

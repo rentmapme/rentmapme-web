@@ -1,0 +1,12 @@
+node_modules
+public
+.tmp
+.idea
+client/bower_components/*
+!client/bower_components/bootstrap
+
+dist
+/server/config/local.env.js
+log_*
+uidh*
+nohup.out

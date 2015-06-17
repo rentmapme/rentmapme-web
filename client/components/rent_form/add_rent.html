@@ -1,0 +1,149 @@
+
+<div class="container" ng-controller="AddRentCtrl">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>Add Rent</h3>
+    </div>
+    <div class="col-sm-12 form-group">
+      <form class="form" name="form" ng-submit="addRent()" novalidate>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label>Address</label>
+
+              <input type="text" name="address" class="form-control" ng-model="rent.address" googleplace required
+                     mongoose-error/>
+              <p class="help-block" ng-if="form.address.$error.required">
+                Address is required.
+              </p>
+            </div>
+
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Lease Start Date</label>
+              <div class="dropdown">
+                <a class="dropdown-toggle" id="leaseStartDate" role="button" data-toggle="dropdown" data-target="#" href="#">
+                  <div class="input-group"><input type="text" name="leaseStartDate" class="form-control" data-ng-model="rentModel.rent.leaseStartDate">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+
+                  </div>
+
+                </a>
+                <p class="help-block" ng-if="form.leaseStartDate.$error.required">
+                  leaseStartDate is required.
+                </p>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                  <datetimepicker data-ng-model="rentModel.rent.leaseStartDate" data-datetimepicker-config="{ dropdownSelector: '#leaseStartDate', startView: 'day', minView: 'day' }" data-on-set-time="onStartEndTime(newDate, oldDate)"/>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Lease End Date</label>
+              <div class="dropdown">
+                <a class="dropdown-toggle" id="leaseEndDate" role="button" data-toggle="dropdown" data-target="#" href="#">
+                  <div class="input-group"><input type="text"  name="leaseEndDate" class="form-control" data-ng-model="rentModel.rent.leaseEndDate">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                  </div>
+
+                </a>
+                <p class="help-block" ng-if="form.leaseEndDate.$error.required">
+                  leaseEndDate is required.
+                </p>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                  <datetimepicker data-ng-model="rentModel.rent.leaseEndDate" data-datetimepicker-config="{ dropdownSelector: '#leaseEndDate', startView: 'day', minView: 'day' }" data-on-set-time="onLeaseEndTime(newDate, oldDate)"/>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="numBedRooms">Number of Bedrooms </label>
+              <select class="form-control" id="numBedrooms" ng-model="rentModel.rent.numBedrooms">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+
+             </div>
+          </div>
+
+          <div class="col-sm-6">
+          <div class="form-group">
+            <label for="numBathrooms">Number of Bathrooms </label>
+            <select class="form-control" id="numBathrooms" ng-model="rentModel.rent.numBathrooms">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+
+          </div>
+        </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-sm-6">
+
+            <label>Rent Amount</label>
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input type="text" name="rentAmount" class="form-control" ng-model="rentModel.rent.rentAmount" required
+                     mongoose-error/>
+
+            </div>
+            <p class="help-block" ng-if="form.rentAmount.$error.required">
+              Rent Amount is required
+            </p>
+
+          </div>
+
+
+        </div>
+
+        <div class="row form-group" style="margin-top:10px;">
+          <div class="col-sm-6">
+              <div class="form-group">
+                <label>Rating (Optional) </label>
+
+                <rating ng-model="rentModel.rent.rating"  readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+              <!--<span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>-->
+
+            </div>
+          </div>
+
+
+        </div>
+          <div class="row form-group">
+            <div class="col-sm-12">
+              <label>Review (Optional) </label>
+
+              <textarea type="text" name="review" class="form-control" ng-model="rentModel.rent.review"
+                     mongoose-error/>
+              <p class="help-block" ng-show="form.password.$error.mongoose">
+                {{ errors.other }}
+              </p>
+            </div>
+
+
+          </div>
+        <!--<p class="help-block"> {{ message }} </p>-->
+
+        <button class="btn btn-lg btn-primary" type="submit">Add Rent</button>
+      </form>
+    </div>
+  </div>
+</div>
+
